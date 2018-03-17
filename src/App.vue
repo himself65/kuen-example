@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1> {{ title }} </h1>
-    <router-view/>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -18,12 +16,22 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+body {
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei",
+    FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB",
+    "Hiragino Sans GB W3", FontAwesome, sans-serif;
+  font-weight: 400;
+  color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+*,
+:after,
+::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 </style>
