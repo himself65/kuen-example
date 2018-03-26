@@ -1,19 +1,19 @@
 <template>
-    <header class="him-navbar-toggle him-footer-fixed-top">
-        <div class="left-button">
-          <a href="/" class="luogu-logo"></a>
-        </div>
-        <button class="right-button">
-          <span class="right-button-text">导航切换</span>
-          <span class="right-icon-bars right-icon-bars-content navbar-font"></span>
-        </button>
-    </header>
+  <header class="him-navbar-toggle him-footer-fixed-top">
+    <div class="left-button">
+      <a href="/" class="luogu-logo"></a>
+    </div>
+    <button class="right-button">
+      <span class="right-button-text right-icon-bars-content">导航切换</span>
+      <span class="right-icon-bars right-icon-bars-content navbar-font"></span>
+    </button>
+  </header>
 </template>
 
 <script>
 export default {
-  name: "Footer"
-};
+  name: 'Navbar'
+}
 </script>
 
 <style>
@@ -59,6 +59,7 @@ export default {
 
 .left-button {
   float: left; /* important */
+  padding: 0 10px;
   height: 50px;
   margin: 0px;
 }
@@ -87,17 +88,16 @@ export default {
 }
 .right-button-text {
   clip: rect(0, 0, 0, 0);
-  width:  1px;
-  height:  1px;
+  width: 1px;
+  height: 1px;
   margin: -1px;
   padding: 0;
   overflow: hidden;
   position: absolute;
 }
 .right-icon-bars-content {
-  content: "\f0c9";
+  font-size: 1.4rem;
   display: inline-block;
   color: white;
 }
 </style>
-
