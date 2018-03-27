@@ -1,12 +1,16 @@
 <template>
-  <header class="him-navbar-toggle him-footer-fixed-top">
-    <div class="left-button">
-      <a href="/" class="luogu-logo"></a>
-    </div>
-    <button class="right-button">
-      <span class="right-button-text right-icon-bars-content">导航切换</span>
-      <span class="right-icon-bars right-icon-bars-content navbar-font"></span>
+  <header id="mp-navbar-toggle" class="mp-navbar mp-navbar-fixed default-primary-color">
+    <button type="button" class="nav-left-button">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar" />
+      <span class="icon-bar" />
+      <span class="icon-bar" />
     </button>
+    <div class="nav-left-button-content">
+      <li> Page </li>
+      <li> About </li>
+      <li> More </li>
+    </div>
   </header>
 </template>
 
@@ -17,87 +21,49 @@ export default {
 </script>
 
 <style>
-.him-footer-fixed-top {
+.nav-left-button-content {
+  display: none;
+  position: absolute;
+  min-width: 168px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}
+.mp-navbar-fixed {
   position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 1000;
-  top: 0;
-}
-
-.li {
-  float: left;
-}
-
-.image {
-  width: 50px;
-  height: 50px;
-}
-
-/* navbar (on the top) */
-.him-navbar-toggle {
-  position: fixed;
-  height: auto;
-  min-height: 50px;
   width: 100%;
-  z-index: 1100;
-  background: #3498db;
-  color: white; /* important */
-  border-style: solid;
-  border-width: 0 0 1px;
+  height: auto;
 }
-
-.luogu-logo {
-  display: block;
-  margin-right: 10px;
-  height: 50px;
-  width: 150px;
-  background: url(../assets/luogu-logo.png) no-repeat center center;
-  -webkit-background-size: 122px 40px;
-  background-size: 122px 40px;
-}
-
-.left-button {
-  float: left; /* important */
-  padding: 0 10px;
-  height: 50px;
-  margin: 0px;
-}
-
-.navbar-font {
-  font-size: 1.4rem;
-}
-
-.right-button {
-  width: 42px;
-  height: 32px;
-
-  border-radius: 5px;
+.nav-left-button {
+  border: 0;
   position: relative;
-  float: right;
-  margin-right: 10px;
-  margin-top: 8px;
-  padding: 0.5em 1em;
-  white-space: nowrap;
+  padding: 19px 1pc;
+  background: inherit;
+  background-color: inherit;
+  background-image: none;
+}
+.nav-left-button:focus + .nav-left-button-content {
+  display: block;
+}
+.icon-bar {
+  display: inherit;
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: inherit;
+  border: 1px solid;
+  border-radius: 0;
   color: white;
-  background-color: #5eb95e;
-  border-color: #5eb95e;
 }
-.right-button {
-  font-size: 1.4rem;
+.icon-bar + .icon-bar {
+  margin-top: 3px;
 }
-.right-button-text {
-  clip: rect(0, 0, 0, 0);
+.sr-only {
+  position: absolute;
   width: 1px;
   height: 1px;
-  margin: -1px;
   padding: 0;
+  margin: -1px;
   overflow: hidden;
-  position: absolute;
-}
-.right-icon-bars-content {
-  font-size: 1.4rem;
-  display: inline-block;
-  color: white;
+  border: 0;
 }
 </style>

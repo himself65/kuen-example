@@ -1,7 +1,7 @@
 <template>
-  <div class="content">
-    <div class="him-index-content am-center">
-      <p> 正文内容 </p>
+  <div id="mp-vueweb-content">
+    <div class="mp-vueweb-content-main">
+      <li> hello,world </li>
     </div>
   </div>
 </template>

@@ -1,6 +1,8 @@
 <template>
-  <div class="toolbar-content">
-    <p> by Himself65 </p>
+  <div id="mp-toolbar" class="">
+    <div id="mp-toolbar-content">
+
+    </div>
   </div>
 </template>
 
@@ -11,7 +13,7 @@ export default {
 </script>
 
 <style>
-.toolbar-content {
+.mp-toolbar-content {
   text-align: center;
 }
 </style>
