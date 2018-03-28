@@ -1,6 +1,6 @@
 <template>
-  <div id="mp-vueweb-content">
-    <div class="mp-vueweb-content-main">
+  <div id="content" class="mp-content">
+    <div class="mp-content-main">
       <li> hello,world </li>
     </div>
   </div>
@@ -13,12 +13,9 @@ export default {
 </script>
 
 <style>
-.him-index-content {
-  margin-top: 20px;
-}
-.content {
+.mp-content {
   position: fixed;
-  height: auto;
+  height: 90%;
   background: #50b9d7;
 }
 </style>

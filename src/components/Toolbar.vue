@@ -1,7 +1,7 @@
 <template>
-  <div id="mp-toolbar" class="">
-    <div id="mp-toolbar-content">
-
+ <div id="toolbar" class="mp-toolbar secondary-text-color">
+    <div class="mp-toolbar-content">
+      Hello,world
     </div>
   </div>
 </template>
@@ -13,6 +13,13 @@ export default {
 </script>
 
 <style>
+#toolbar {
+    height: 40px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 .mp-toolbar-content {
   text-align: center;
 }

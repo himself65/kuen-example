@@ -1,17 +1,13 @@
 <template>
-  <header id="mp-navbar-toggle" class="mp-navbar mp-navbar-fixed default-primary-color">
+<!-- 左侧按钮 -->
+  <div id="mp-navbar-toggle" class="mp-navbar mp-navbar-fixed default-primary-color">
     <button type="button" class="nav-left-button">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar" />
       <span class="icon-bar" />
       <span class="icon-bar" />
     </button>
-    <div class="nav-left-button-content">
-      <li> Page </li>
-      <li> About </li>
-      <li> More </li>
-    </div>
-  </header>
+  </div>
 </template>
 
 <script>
@@ -21,26 +17,27 @@ export default {
 </script>
 
 <style>
-.nav-left-button-content {
-  display: none;
-  position: absolute;
-  min-width: 168px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  background-color: #f9f9f9;
-}
+/*上方导航栏*/
 .mp-navbar-fixed {
   position: fixed;
   width: 100%;
   height: auto;
+  min-width: 50px;
 }
+
 .nav-left-button {
   border: 0;
-  position: relative;
+  z-index: 1000;
   padding: 19px 1pc;
   background: inherit;
   background-color: inherit;
   background-image: none;
 }
+.mp-navbar {
+  clear: both;
+}
+
+/*Navbar button*/
 .nav-left-button:focus + .nav-left-button-content {
   display: block;
 }
