@@ -1,22 +1,43 @@
 <template>
-<!-- 左侧按钮 -->
-  <div id="mp-navbar-toggle" class="mp-navbar mp-navbar-fixed default-primary-color">
-    <button type="button" class="nav-left-button">
+  <!-- 左侧按钮 -->
+  <header id="mp-navbar-toggle" class="mp-navbar mp-navbar-fixed default-primary-color">
+    <button type="button" id="menubutton" @click="openMenu" class="nav-left-button">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar" />
       <span class="icon-bar" />
       <span class="icon-bar" />
     </button>
-  </div>
+  </header>
 </template>
 
 <script>
+import bus from '../assets/js/eventBus.js'
+
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  methods: {
+    openMenu () {
+      store.commit('changeMenuState')
+    }
+  }
+  // data () {
+  //   return {
+  //     openMenu: 0
+  //   }
+  // },
+  // methods: {
+  //   openMenu: function () {
+  //     // bus.$emit('openMenuEvent', 1)
+  //     alert('1')
+  //   }
+  // }
 }
 </script>
 
 <style>
+#menubutton {
+  transition: 0.2s ease-out;
+}
 /*上方导航栏*/
 .mp-navbar-fixed {
   position: fixed;
@@ -26,6 +47,7 @@ export default {
 }
 
 .nav-left-button {
+  border-radius: 70px;
   border: 0;
   z-index: 1000;
   padding: 19px 1pc;

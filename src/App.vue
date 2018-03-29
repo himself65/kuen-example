@@ -2,7 +2,7 @@
   <div id="vueweb">
     <div class="mp-vueweb-mask">
       <navbar></navbar>
-      <menu></menu>
+      <navbar-list></navbar-list>
       <content></content>
       <toolbar></toolbar>
     </div>
@@ -34,6 +34,12 @@ input {
   background-color: white;
   display: table;
   transition: opacity 0.3s ease;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #212121;
+  font-family: 'Segoe UI', 'Lucida Grande', Helvetica, Arial, 'Microsoft YaHei',
+    FreeSans, Arimo, 'Droid Sans', 'wenquanyi micro hei', 'Hiragino Sans GB',
+    'Hiragino Sans GB W3', FontAwesome, sans-serif;
 }
 </style>
 
@@ -45,13 +51,13 @@ input {
 import Navbar from './components/Navbar.vue'
 import Toolbar from './components/Toolbar.vue'
 import Content from './components/Content.vue'
-import Menu from './components/Menu.vue'
+import NavbarList from './components/NavbarList.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
-    Menu,
+    NavbarList,
     Content,
     Toolbar
   }

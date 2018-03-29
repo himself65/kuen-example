@@ -1,7 +1,9 @@
 <template>
-  <div id="content" class="mp-content">
-    <div class="mp-content-main">
-      <li> hello,world </li>
+  <div id="content">
+    <div class="am-main">
+      <p>
+        shit
+      </p>
     </div>
   </div>
 </template>
@@ -13,9 +15,5 @@ export default {
 </script>
 
 <style>
-.mp-content {
-  position: fixed;
-  height: 90%;
-  background: #50b9d7;
-}
+
 </style>
