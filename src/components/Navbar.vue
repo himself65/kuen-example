@@ -1,7 +1,7 @@
 <template>
   <!-- 左侧按钮 -->
   <header id="mp-navbar-toggle" class="mp-navbar mp-navbar-fixed default-primary-color">
-    <button type="button" id="menubutton" @click="openMenu" class="nav-left-button">
+    <button type="button" id="menubutton" v-on:click="openMenu" class="nav-left-button">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar" />
       <span class="icon-bar" />
@@ -14,30 +14,11 @@
 import bus from '../assets/js/eventBus.js'
 
 export default {
-  name: 'Navbar',
-  methods: {
-    openMenu () {
-      store.commit('changeMenuState')
-    }
-  }
-  // data () {
-  //   return {
-  //     openMenu: 0
-  //   }
-  // },
-  // methods: {
-  //   openMenu: function () {
-  //     // bus.$emit('openMenuEvent', 1)
-  //     alert('1')
-  //   }
-  // }
+  name: 'Navbar'
 }
 </script>
 
 <style>
-#menubutton {
-  transition: 0.2s ease-out;
-}
 /*上方导航栏*/
 .mp-navbar-fixed {
   position: fixed;

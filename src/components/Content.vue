@@ -2,7 +2,7 @@
   <div id="content">
     <div class="am-main">
       <p>
-        shit
+
       </p>
     </div>
   </div>

@@ -3,7 +3,7 @@
     <div class="mp-vueweb-mask">
       <navbar></navbar>
       <navbar-list></navbar-list>
-      <content></content>
+      <mainArea></mainArea>
       <toolbar></toolbar>
     </div>
   </div>
@@ -21,6 +21,9 @@ input {
   font: inherit;
   color: inherit;
   outline: 0 none !important;
+}
+button:focus {
+  outline: none;
 }
 .mp-vueweb-mask {
   position: fixed;
@@ -50,7 +53,7 @@ input {
 <script>
 import Navbar from './components/Navbar.vue'
 import Toolbar from './components/Toolbar.vue'
-import Content from './components/Content.vue'
+import MainArea from './components/Content.vue'
 import NavbarList from './components/NavbarList.vue'
 
 export default {
@@ -58,7 +61,7 @@ export default {
   components: {
     Navbar,
     NavbarList,
-    Content,
+    MainArea,
     Toolbar
   }
 }
