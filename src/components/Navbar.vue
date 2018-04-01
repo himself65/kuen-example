@@ -1,24 +1,32 @@
 <template>
   <!-- 左侧按钮 -->
-  <header id="mp-navbar-toggle" class="mp-navbar mp-navbar-fixed default-primary-color">
+  <div id="mp-navbar-toggle" class="mp-navbar mp-navbar-fixed default-primary-color">
     <button type="button" id="menubutton" v-on:click="openMenu" class="nav-left-button">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar" />
       <span class="icon-bar" />
       <span class="icon-bar" />
     </button>
-  </header>
+  </div>
 </template>
 
 <script>
 import bus from '../assets/js/eventBus.js'
 
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  methods: {
+    openMenu () {
+      this.$emit('childEvent', 'open')
+    }
+  }
 }
 </script>
 
 <style>
+#mp-navbar-toggle {
+  top: 0;
+}
 /*上方导航栏*/
 .mp-navbar-fixed {
   position: fixed;

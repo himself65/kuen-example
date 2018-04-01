@@ -18,7 +18,6 @@ export default {
   box-sizing: border-box;
   position: absolute;
   bottom: 0;
-  z-index: 1001;
   width: 100%;
 }
 .mp-toolbar-content {

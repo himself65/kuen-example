@@ -1,9 +1,15 @@
 <template>
   <div id="vueweb">
     <div class="mp-vueweb-mask">
-      <navbar></navbar>
-      <navbar-list></navbar-list>
-      <mainArea></mainArea>
+      <vue-drawer-layout ref="drawerLayout" :drawer-width="300" :drawable-distance="400" @mask-click="handleMaskClick">
+        <div class="drawer" slot="drawer">
+          <navbar-list></navbar-list>
+        </div>
+        <div class="content" slot="content">
+          <navbar @childEvent="handleToggleDrawer"></navbar>
+          <mainArea></mainArea>
+        </div>
+      </vue-drawer-layout>
       <toolbar></toolbar>
     </div>
   </div>
@@ -31,12 +37,10 @@ button:focus {
   top: 0;
   left: 0;
   width: 100%;
-  min-width: 100%;
   height: 100%;
-  min-height: 100%;
   background-color: white;
   display: table;
-  transition: opacity 0.3s ease;
+  /* font */
   font-size: 1.6rem;
   font-weight: 400;
   color: #212121;
@@ -63,6 +67,14 @@ export default {
     NavbarList,
     MainArea,
     Toolbar
+  },
+  methods: {
+    handleToggleDrawer () {
+      this.$refs.drawerLayout.toggle();
+    },
+    handleMaskClick () {
+      this.$refs.drawerLayout.toggle(false);
+    }
   }
 }
 </script>
