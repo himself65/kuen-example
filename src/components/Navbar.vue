@@ -7,6 +7,9 @@
       <span class="icon-bar" />
       <span class="icon-bar" />
     </button>
+    <div class="mp-navbar-right">
+      <h1> </h1>
+    </div>
   </div>
 </template>
 
@@ -26,6 +29,9 @@ export default {
 <style>
 #mp-navbar-toggle {
   top: 0;
+  left: 0;
+  right: 0;
+  display: inline;
 }
 /*上方导航栏*/
 .mp-navbar-fixed {

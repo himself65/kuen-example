@@ -8,19 +8,14 @@
         <div class="content" slot="content">
           <navbar @childEvent="handleToggleDrawer"></navbar>
           <mainArea></mainArea>
+          <toolbar></toolbar>
         </div>
       </vue-drawer-layout>
-      <toolbar></toolbar>
     </div>
   </div>
 </template>
 
 <style>
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 button,
 input {
   margin: 0;
@@ -70,10 +65,10 @@ export default {
   },
   methods: {
     handleToggleDrawer () {
-      this.$refs.drawerLayout.toggle();
+      this.$refs.drawerLayout.toggle()
     },
     handleMaskClick () {
-      this.$refs.drawerLayout.toggle(false);
+      this.$refs.drawerLayout.toggle(false)
     }
   }
 }
