@@ -77,7 +77,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'vueweb',
         'USER': 'root',
-        'PASSWORD': '**',
+        'PASSWORD': 'HIDDEN',
         'HOST': '127.0.0.1',
     }
 }
