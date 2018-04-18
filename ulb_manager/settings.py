@@ -120,11 +120,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-<<<<<<< HEAD
-STATIC_URL = '/frontend/static/'
-=======
 STATIC_URL = '/static/'
->>>>>>> ffcbf2e1a9eb02ef81ab993f286b8f266f577962
 
 # Add for vuejs
 STATICFILES_DIRS = [

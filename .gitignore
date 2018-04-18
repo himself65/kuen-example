@@ -16,3 +16,8 @@ yarn-error.log*
 # Build files
 /frontend/dist
 *.pyc
+
+# Local Folder
+vueserve
+.env
+nginx
