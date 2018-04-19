@@ -16,7 +16,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'vueweb',
         'USER': 'root',
-        'PASSWORD': '*',
+        'PASSWORD': '**Change There**',
         'HOST': '127.0.0.1',
     }
 }
@@ -43,7 +43,10 @@ python3 manage.py migrate
 python3 manage.py runserve
 ```
 
+**PS**:
+
+Maybe you need build a virtual env like virtualenv, docker .etc, and i use the first.
+
 ## License
 
 ChartRoom is available under the MIT license. See the [LICENSE](LICENSE) file for more information.
-```
