@@ -21,3 +21,6 @@ yarn-error.log*
 vueserve
 .env
 nginx
+
+*/migrations
+*/__pycache__

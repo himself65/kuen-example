@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'backend',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # Django 层注入Header
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -107,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh_Hans'
 
 TIME_ZONE = 'Asia/Shanghai'
 
@@ -125,4 +127,10 @@ STATIC_URL = '/static/'
 # Add for vuejs
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend/dist/static"),
+]
+
+# 白名单
+CORS_ORIGIN_WHITELIST = [
+    'localhost:8080',
+    'localhost:8081',
 ]
