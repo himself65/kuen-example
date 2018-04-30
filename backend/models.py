@@ -27,10 +27,10 @@ class User(models.Model):
 
     # 密码
     # 安全考虑: 此处保存为Hash后的值
-    password = models.CharField(max_length=256, null=False)
+    password = models.CharField(max_length=100)
 
     # e-Mail
-    email = models.EmailField()
+    email = models.EmailField(blank=True, default="")
 
     def __str__(self):
         return '%ld %s %s' % (self.uid, self.name, self.utype)
