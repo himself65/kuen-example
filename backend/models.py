@@ -20,17 +20,20 @@ class User(models.Model):
 
     # 用户类型
     # 1 普通、2 管理员、3 Root管理
-    utype = models.CharField(max_length=1, choices=USER_TYPE)
+    utype = models.CharField(max_length=1, choices=USER_TYPE, blank=False)
 
     # 用户名称
-    name = models.CharField(max_length=20, null=False)
+    name = models.CharField(max_length=20, null=False, blank=False)
 
     # 密码
-    # 安全考虑: 此处保存为Hash后的值
-    password = models.CharField(max_length=100)
+    # TODO 安全考虑: 此处保存为Hash后的值
+    password = models.CharField(max_length=100, blank=False)
 
-    # e-Mail
-    email = models.EmailField(blank=True, default="")
+    # 邮箱
+    email = models.EmailField(unique=True, blank=False)
+
+    # 创建时间
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return '%ld %s %s' % (self.uid, self.name, self.utype)
@@ -43,13 +46,16 @@ class Article(models.Model):
     pid = models.AutoField(primary_key=True)
 
     # 作者ID
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
 
     # 文章标题
-    title = models.CharField(max_length=250, null=False)
+    title = models.CharField(max_length=250, null=False, blank=False)
 
     # 文章内容
-    body = models.TextField(null=False)
+    body = models.TextField(null=False, blank=False)
+
+    # 创建时间
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return '%ld %s %s' % (self.pid, self.title, self.author)

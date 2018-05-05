@@ -6,14 +6,14 @@ class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         exclude = []
         model = Article
-        fields = '__all__'
+        fields = ('pid', 'author', 'title', 'body')
 
 
 class UserRegisterSerializer(serializers.ModelSerializer):
     class Meta:
         exclude = []
         model = User
-        field = ('name', 'email')
+        field = ('name')
 
 
 class UserSerializer(serializers.ModelSerializer):
