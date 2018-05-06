@@ -16,14 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.urls import path, include
 from .routers import router
-from django.contrib import admin
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
 ]
 
+# 登陆按钮
 urlpatterns += [
     url(r'api-auth/', include(
         'rest_framework.urls', namespace='rest_framework')),
