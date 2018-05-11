@@ -1,10 +1,11 @@
 <template>
   <div>
     <md-toolbar class="md-primary">
-      <md-button class="md-icon-button" @click="toggleMenu">
+      <md-button class="md-icon-button"
+                 @click="toggleMenu">
         <md-icon>menu</md-icon>
       </md-button>
-      <span class="md-title">ChartRoom</span>
+      <span class="md-title">VueWeb</span>
     </md-toolbar>
   </div>
 </template>
@@ -18,9 +19,7 @@ import store from '../store'
 export default {
   name: 'Toolbar',
   data: function () {
-    return {
-
-    }
+    return {}
   },
   methods: {
     toggleMenu () {

@@ -11,7 +11,7 @@ var author = {
 var article = {
   uid: 2234,
   title: '今日市民郭嘉掉入水中，到目前为止生死未卜',
-  abstract: '沟里郭嘉生死疑，起因祸复去之',
+  abstract: '沟里郭嘉生死疑，起因祸复避去之',
   category: ['News', 'Important'],
   headImg: img,
   rate: {
@@ -32,6 +32,11 @@ var articles = (() => {
   return articles
 })()
 
-var TestData = { articles, author }
+var TestData = {
+  articles,
+  author
+}
 
-export default { TestData }
+export default {
+  TestData
+}

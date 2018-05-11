@@ -1,7 +1,7 @@
 <template>
   <scoll-area>
     <div>
-      <p> This is Chart Page</p>
+      <p> Welcome to Chart Room</p>
     </div>
   </scoll-area>
 </template>
