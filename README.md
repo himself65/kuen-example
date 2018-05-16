@@ -4,29 +4,11 @@
 
 > A Vue.js and Django Project to make a blog
 
+[Backend-Part](https://github.com/Himself65/VueWeb-Backend)
+
 ## How to Build
 
-1.  install the dependencies, like [rest_framework](http://www.django-rest-framework.org/) or someting else.
-
-2.  In [FrontendSettingsConf](ulb_manager/settings.py), You must change these lines (PASSWORD has hidden)
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vueweb',
-        'USER': 'root',
-        'PASSWORD': '**Change There**',
-        'HOST': '127.0.0.1',
-    }
-}
-```
-
-3.  build frontend
-
 ```bash
-# open frontend
-cd frontend
 
 # install dependencies
 npm install
@@ -35,18 +17,6 @@ npm install
 npm run build
 ```
 
-4.  start backend (you should go back first)
-
-```bash
-python3 manage.py migrate
-
-python3 manage.py runserve
-```
-
-**PS**:
-
-Maybe you need build a virtual env like virtualenv, docker .etc, and i use the first.
-
 ## License
 
-ChartRoom is available under the MIT license. See the [LICENSE](LICENSE) file for more information.
+VueWeb is available under the MIT license. See the [LICENSE](LICENSE) file for more information.
