@@ -21,10 +21,10 @@
         <span class="md-list-item-text">消息</span>
       </md-list-item>
 
-      <md-list-item to="/Settings">
+      <!-- <md-list-item to="/Settings">
         <md-icon>settings</md-icon>
         <span class="md-list-item-text">设置</span>
-      </md-list-item>
+      </md-list-item> -->
 
       <md-list-item to="/About">
         <md-icon>info</md-icon>

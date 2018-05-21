@@ -8,13 +8,13 @@ Vue.use(Vuex)
 let state = {
   menuOpen: false,
   darkTheme: false,
-  Data: TestData
+  Data: TestData,
+  DarkTheme: false
 }
 
 let mutations = {
   changeMenuState: state => {
     state.menuOpen = !state.menuOpen
-    console.log(state.menuOpen)
   }
 }
 export default new Vuex.Store({
