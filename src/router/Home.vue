@@ -39,7 +39,10 @@
           justify-center
           align-center
         >
+          <!--<el-button :plain="true" @click="alert('GG')">success</el-button>-->
+          <div v-for="article in articles" :key="article.id">
 
+          </div>
         </v-layout>
       </v-container>
     </v-content>
@@ -54,11 +57,15 @@
 </style>
 
 <script>
+import api from '../utils/api'
+
 export default {
   name: 'Home',
   data: () => {
+    api.getAllArticles().then(res => { this.articles = res }
+    )
     return ({
-      articles: null,
+      articles: [],
       drawer: false
     })
   },
@@ -71,6 +78,9 @@ export default {
         // TODO
         // 跳转链接
       }
+    },
+    alert: function (msg) {
+
     }
   }
 }
