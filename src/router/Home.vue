@@ -31,35 +31,14 @@
     <!-- ToolBar部分 -->
     <v-toolbar color="blue" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>VueWeb</v-toolbar-title>
+      <v-toolbar-title>文章列表</v-toolbar-title>
     </v-toolbar>
     <v-content>
       <v-container fluid
                    style="min-height: 0;"
                    grid-list-lg>
         <v-layout row wrap>
-          <v-flex v-for="article in articles" v-bind:key="article.id" xs12>
-            <v-card class="" round>
-              <v-card-media class="white--text" v-bind:src="article.head_img_url" height="200px">
-                <v-container fill-height fluid>
-                  <v-layout fill-height>
-                    <v-flex xs12 align-end flexbox>
-                      <span class="headline">{{ article.title }}</span>
-                    </v-flex>
-                  </v-layout>
-                </v-container>
-              </v-card-media>
-              <v-card-text primary-title>
-                {{ article.content }}
-              </v-card-text>
-              <v-card-actions xs12 sm5 md3>
-                <v-btn @click.stop="" color="orange" flat>查看</v-btn>
-                <v-btn icon>
-                  <v-icon>thumb_up</v-icon>
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
+          <article-card v-for="article in articles" v-bind:article="article" v-bind:key="article.id"></article-card>
         </v-layout>
       </v-container>
     </v-content>
@@ -75,9 +54,14 @@
 
 <script>
 import api from '../utils/api'
+import ArticleCard from '../components/ArticleCard'
 
 export default {
   name: 'Home',
+  components: {ArticleCard},
+  comments: {
+    ArticleCard
+  },
   data: () => {
     return ({
       articles: [],
