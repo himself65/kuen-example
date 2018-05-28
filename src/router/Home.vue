@@ -1,49 +1,16 @@
 <template>
   <v-app id="inspire">
     <!-- NavBar部分 -->
-    <v-navigation-drawer
-      class="white"
-      fixed
-      v-model="drawer"
-      app
-    >
-      <v-list class="light-blue" dense>
-        <v-list-tile class="pl-2" avatar>
-          <v-list-tile-avatar>
-            <img src="https://cdn.luogu.org/upload/usericon/72813.png">
-          </v-list-tile-avatar>
-          <v-list-tile-content>
-            <v-list-tile-title>扩散性百万甜面包</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-      <v-list dense>
-        <v-list-tile v-on:click="open_url()">
-          <v-list-tile-action class="pl-2">
-            <v-icon>home</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <!---->
-        <v-list-tile v-on:click="open_url()">
-          <v-list-tile-action class="pl-2">
-            <v-icon>announcement</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>About</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
+    <v-navigation-drawer class="white" fixed v-model="drawer" app>
+      <drawer></drawer>
     </v-navigation-drawer>
     <!-- ToolBar部分 -->
-    <v-toolbar color="light-blue" dark fixed app>
+    <v-toolbar color="light-blue" dark fixed app scroll-off-screen>
       <v-toolbar-side-icon @click.stop="drawer=!drawer"></v-toolbar-side-icon>
       <v-toolbar-title>VueWeb</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-menu bottom min-width="300px" offset-y>
-        <v-btn slot="activator" flat fab left>
+        <v-btn slot="activator" flat fab left transition="slide-y-transition">
           <v-avatar size="32">
             <img src="https://cdn.luogu.org/upload/usericon/72813.png">
           </v-avatar>
@@ -65,8 +32,27 @@
       </v-container>
     </v-content>
     <!-- Footer部分 -->
-    <v-footer color="blue" app inset>
-      <span class="white--text">&copy; 2018 Code by Himself65</span>
+    <v-footer absolute height="auto" inset app>
+      <v-card
+        flat
+        tile
+        width="100%"
+        class="light-blue white--text text-xs-center"
+      >
+        <v-card-text>
+          <v-btn
+            v-for="icon in icons"
+            :key="icon"
+            icon
+            class="mx-3 white--text"
+          >
+            <v-icon size="24px">{{ icon.icon }}</v-icon>
+          </v-btn>
+        </v-card-text>
+        <v-card-text class="white--text">
+          &copy;2018 — <strong>Himself65</strong>
+        </v-card-text>
+      </v-card>
     </v-footer>
   </v-app>
 </template>
@@ -77,17 +63,24 @@
 <script>
 import api from '../utils/api'
 import ArticleCard from '../components/ArticleCard'
+import Drawer from '../components/Drawer'
+import HimFooter from '../components/FooterContent'
+import config from '../config'
 
 export default {
   name: 'Home',
-  components: {ArticleCard},
-  comments: {
-    ArticleCard
+  components: {
+    ArticleCard,
+    Drawer,
+    HimFooter
   },
   data: () => {
     return ({
+      user: null,
+      page: 1,
       articles: [],
-      drawer: false
+      drawer: false,
+      icons: [],
     })
   },
   methods: {
@@ -115,6 +108,9 @@ export default {
     let _this = this
     this.$nextTick(function () {
       _this.get_list()
+    })
+    this.$nextTick(function () {
+      _this.icons = config.themeConfig.toolbar
     })
   }
 }
