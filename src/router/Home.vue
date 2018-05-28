@@ -32,32 +32,16 @@
       </v-container>
     </v-content>
     <!-- Footer部分 -->
-    <v-footer absolute height="auto" inset app>
-      <v-card
-        flat
-        tile
-        width="100%"
-        class="light-blue white--text text-xs-center"
-      >
-        <v-card-text>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            icon
-            class="mx-3 white--text"
-          >
-            <v-icon size="24px">{{ icon.icon }}</v-icon>
-          </v-btn>
-        </v-card-text>
-        <v-card-text class="white--text">
-          &copy;2018 — <strong>Himself65</strong>
-        </v-card-text>
-      </v-card>
+    <v-footer absolute class="toolbar-fix" height="auto" inset app>
+      <him-footer></him-footer>
     </v-footer>
   </v-app>
 </template>
 
 <style>
+  .toolbar-fix {
+    position: inherit;
+  }
 </style>
 
 <script>
@@ -65,7 +49,6 @@ import api from '../utils/api'
 import ArticleCard from '../components/ArticleCard'
 import Drawer from '../components/Drawer'
 import HimFooter from '../components/FooterContent'
-import config from '../config'
 
 export default {
   name: 'Home',
@@ -79,24 +62,10 @@ export default {
       user: null,
       page: 1,
       articles: [],
-      drawer: false,
-      icons: [],
+      drawer: false
     })
   },
   methods: {
-    open_url: function (url) {
-      if (url === undefined) {
-        // @TODO
-        // 提醒用户您啥也没写
-      } else {
-        // @TODO
-        // 跳转链接
-      }
-    },
-    alert: function (msg) {
-      // @TODO
-      // 后期改到全局方法
-    },
     get_list () {
       let _this = this
       api.getAllArticles().then(function (data) {
@@ -108,9 +77,6 @@ export default {
     let _this = this
     this.$nextTick(function () {
       _this.get_list()
-    })
-    this.$nextTick(function () {
-      _this.icons = config.themeConfig.toolbar
     })
   }
 }

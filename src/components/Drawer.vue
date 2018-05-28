@@ -50,7 +50,7 @@ export default {
   mounted: function () {
     let _this = this
     this.$nextTick(function () {
-      _this.nav_list = config.themeConfig.navbar
+      _this.nav_list = config.themeConfig.nav
     })
   }
 }
