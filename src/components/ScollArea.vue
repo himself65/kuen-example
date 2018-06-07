@@ -13,7 +13,7 @@
 </style>
 
 <script>
-import Toolbar from '../components/Toolbar.vue'
+import Toolbar from './Toolbar.vue'
 import Drawer from '../components/Drawer.vue'
 
 export default {
