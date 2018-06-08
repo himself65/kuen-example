@@ -7,9 +7,7 @@
     <toolbar></toolbar>
     <!-- Content部分 -->
     <v-content>
-      <v-container fluid
-                   style="min-height: 0;"
-                   grid-list-lg>
+      <v-container fluid style="min-height: 0;" grid-list-lg>
         <v-layout row wrap>
           <article-card v-for="article in articles" v-bind:article="article" v-bind:key="article.id"></article-card>
         </v-layout>
